@@ -1,0 +1,13 @@
+- name: add inventory hostname to /etc/hosts
+  sudo: true
+  host:
+    ip=127.0.0.1
+    hostname=localhost
+    aliases={{ inventory_hostname }}
+
+- name: save inventory hostname to /etc/hostname
+  sudo: true
+  copy:
+    dest=/etc/hostname
+    content={{ inventory_hostname }}
+  notify: update hostname
