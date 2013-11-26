@@ -1,3 +1,0 @@
-- name: update hostname
-  sudo: true
-  command: /bin/hostname -F /etc/hostname
